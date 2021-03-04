@@ -1,48 +1,23 @@
 package com.example.chatwhatsapp.feature.fragment;
 
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.legacy.app.FragmentPagerAdapter;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 
 import com.example.chatwhatsapp.feature.fragment.chat.ChatsFragment;
 import com.example.chatwhatsapp.feature.fragment.request.RequestsFragment;
 
 public class TabsAccessorAdapter  extends FragmentPagerAdapter {
-
-
     public TabsAccessorAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm);
+        super(fm, behavior);
     }
 
-    @Override
-    public Fragment getItem(int i)
-    {
-        switch (i)
-        {
-            case 0:
-                ChatsFragment chatsFragment = new ChatsFragment();
-                return chatsFragment;
 
-            case 1:
-                GroupsFragment groupsFragment = new GroupsFragment();
-                return groupsFragment;
 
-            case 2:
-                ContactsFragment contactsFragment = new ContactsFragment();
-                return contactsFragment;
-            case 3:
-                RequestsFragment requestsFragment = new RequestsFragment();
-                return requestsFragment;
-
-            default:
-                return null;
-        }
-    }
 
 
     @Override
@@ -75,4 +50,28 @@ public class TabsAccessorAdapter  extends FragmentPagerAdapter {
                 return null;
         }
     }
+
+    @NonNull
+    @Override
+    public Fragment getItem(int position) {
+        switch (position)
+        {
+            case 0:
+                ChatsFragment chatsFragment = new ChatsFragment();
+                return chatsFragment;
+
+            case 1:
+                GroupsFragment groupsFragment = new GroupsFragment();
+                return groupsFragment;
+
+            case 2:
+                ContactsFragment contactsFragment = new ContactsFragment();
+                return contactsFragment;
+            case 3:
+                RequestsFragment requestsFragment = new RequestsFragment();
+                return requestsFragment;
+
+            default:
+                return null;
+        }    }
 }

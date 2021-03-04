@@ -1,9 +1,9 @@
 package com.example.chatwhatsapp.feature.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
